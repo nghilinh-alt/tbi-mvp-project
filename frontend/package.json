@@ -1,0 +1,51 @@
+{
+  "name": "tbi-employment-pathways-mvp",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "QLD Government PSP Challenge - TBI Employment Pathways MVP Application",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode production",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "accessibility:test": "jest cypress/accessibility.spec.ts",
+    "audit": "npm audit"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "axios": "^1.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^5.2.2",
+    "vite": "^7.3.3",
+    "vitest": "^4.1.6"
+  },
+  "keywords": [
+    "accessibility",
+    "tbi",
+    "employment",
+    "wcag",
+    "government"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nghilinh-alt/tbi-employment-pathways-mvp.git"
+  },
+  "config": {
+    "axe": true
+  }
+}

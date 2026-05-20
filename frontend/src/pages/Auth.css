@@ -1,0 +1,105 @@
+/* TBI MVP - Auth Page Styles */
+.auth-page {
+  min-height: calc(100vh - 240px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+}
+
+.auth-header p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-group input {
+  padding: 0.875rem 1rem;
+  border-radius: calc(var(--radius) * 1.5);
+  border: 1px solid var(--border-color);
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.auth-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.auth-links a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.demo-notice {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--background-secondary);
+  border-radius: calc(var(--radius) * 0.75);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.demo-notice strong {
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .auth-header h1 {
+    font-size: 2rem;
+  }
+  
+  .auth-form {
+    gap: 1.25rem;
+  }
+}

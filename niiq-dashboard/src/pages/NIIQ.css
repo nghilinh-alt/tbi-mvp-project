@@ -1,0 +1,158 @@
+/**
+ * NIISQ Intelligence Dashboard - Screen 1: System Health Monitor
+ */
+
+/* Container */
+.niiq-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: var(--spacing-md);
+}
+
+/* Header */
+.niiq-header {
+  text-align: center;
+  color: white;
+  margin-bottom: var(--spacing-lg);
+}
+
+.niiq-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.niiq-header p {
+  font-size: 1rem;
+  opacity: 0.95;
+  margin-top: var(--spacing-sm);
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.metrics-grid h2 {
+  font-size: 1.25rem;
+  margin: 0 0 var(--spacing-lg) 0;
+  color: #212529;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: var(--spacing-md);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: #6c757d;
+  text-transform: capitalize;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+/* Capacity Chart */
+.capacity-chart {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.capacity-chart h2 {
+  font-size: 1.25rem;
+  margin: 0 0 var(--spacing-lg) 0;
+  color: #212529;
+  text-align: center;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  height: 200px;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid #dee2e6;
+}
+
+.bar-chart > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.bar-label {
+  font-size: 0.875rem;
+  color: #495057;
+  text-transform: capitalize;
+}
+
+.bar-fill {
+  width: 100%;
+  min-height: 2px;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.bar-chart > div:nth-child(1) .bar-fill { background: var(--color-success); }
+.bar-chart > div:nth-child(2) .bar-fill { background: var(--color-warning); }
+.bar-chart > div:nth-child(3) .bar-fill { background: var(--color-danger); }
+
+.chart-note {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-top: var(--spacing-md);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .niiq-container {
+    padding: var(--spacing-lg);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .niiq-container {
+    padding: var(--spacing-xl);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .metric-card,
+  .capacity-chart {
+    border-width: 3px;
+  }
+}

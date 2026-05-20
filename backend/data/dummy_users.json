@@ -1,0 +1,217 @@
+{
+  "participants": [
+    {
+      "id": "p-001",
+      "email": "sarah.johnson@participant.example.com",
+      "password": "hashed:demo123",
+      "name": "Sarah Johnson",
+      "role": "participant",
+      "status": "active",
+      "injuryDate": "2024-02-15",
+      "disabilityType": "mobility impairment (wheelchair user)",
+      "functionalLimitations": [
+        "limited walking distance (< 500m)",
+        "difficulty with stairs",
+        "needs wheelchair accessibility"
+      ],
+      "preferredWorkEnvironment": ["remote", "flexible hybrid"],
+      "requiredAccommodations": ["wheelchair accessible workspace", "ergonomic equipment", "flexible scheduling"],
+      "skillsAssessment": {
+        "previousRole": "Customer Service Representative",
+        "coreSkills": [
+          {"name": "Communication", "score": 92},
+          {"name": "Problem Solving", "score": 78},
+          {"name": "Technology Proficiency", "score": 65}
+        ],
+        "nextSteps": ["Complete digital literacy course", "Practice remote collaboration tools"]
+      },
+      "employmentJourney": {
+        "status": "screening",
+        "currentStage": "3",
+        "stageName": "Job Matching & Applications",
+        "completedStages": [
+          {"name": "Assessment & Screening", "date": "2024-05-10"},
+          {"name": "Skill Assessment", "date": "2024-05-12"}
+        ],
+        "timelineData": {
+          "startDate": "2024-02-15",
+          "currentProgress": 45,
+          "targetStageDate": "2024-06-30"
+        },
+        "confidenceScores": {"overall": 7.8, "breakdown": [{"area": "job match confidence", "score": 8.2}, {"area": "self-efficacy", "score": 7.5}, {"area": "support satisfaction", "score": 8.0}]},
+        "checkIns": [
+          {
+            "date": "2024-05-10",
+            "status": "completed",
+            "notes": "Initial assessment complete, moving to job matching phase"
+          },
+          {
+            "date": "2024-05-18",
+            "status": "scheduled",
+            "nextCheckInDate": "2024-06-03"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p-002",
+      "email": "marcus.williams@participant.example.com",
+      "password": "hashed:demo123",
+      "name": "Marcus Williams",
+      "role": "participant",
+      "status": "active",
+      "injuryDate": "2024-03-20",
+      "disabilityType": "vision impairment",
+      "functionalLimitations": [
+        "reduced visual acuity",
+        "difficulty reading standard displays",
+        "needs screen reader compatibility"
+      ],
+      "preferredWorkEnvironment": ["remote", "quiet environment"],
+      "requiredAccommodations": ["screen reader support", "accessible documentation", "magnification tools"],
+      "skillsAssessment": {
+        "previousRole": "Data Entry Specialist",
+        "coreSkills": [
+          {"name": "Attention to Detail", "score": 88},
+          {"name": "Data Accuracy", "score": 95},
+          {"name": "Keyboard Proficiency", "score": 90}
+        ],
+        "nextSteps": ["Complete accessibility tools training", "Practice with screen reader software"]
+      },
+      "employmentJourney": {
+        "status": "in_progress",
+        "currentStage": "4",
+        "stageName": "Onboarding & Training",
+        "completedStages": [
+          {"name": "Assessment & Screening", "date": "2024-03-25"},
+          {"name": "Skill Assessment", "date": "2024-03-28"},
+          {"name": "Job Matching", "date": "2024-04-15"}
+        ],
+        "timelineData": {
+          "startDate": "2024-03-20",
+          "currentProgress": 62,
+          "targetStageDate": "2024-07-15"
+        },
+        "confidenceScores": {"overall": 8.5, "breakdown": [{"area": "job match confidence", "score": 9.0}, {"area": "self-efficacy", "score": 8.2}, {"area": "support satisfaction", "score": 8.3}]},
+        "checkIns": [
+          {
+            "date": "2024-03-25",
+            "status": "completed",
+            "notes": "Assessment complete, matched with accessible data entry role"
+          },
+          {
+            "date": "2024-04-22",
+            "status": "completed",
+            "notes": "Job offer accepted, onboarding scheduled"
+          }
+        ]
+      }
+    }
+  ],
+  "employers": [
+    {
+      "id": "e-001",
+      "email": "hr@techcorp.example.com",
+      "password": "hashed:demo123",
+      "companyName": "TechCorp Solutions",
+      "role": "employer",
+      "status": "active",
+      "industry": "Technology & Software Development",
+      "employeeCount": 250,
+      "location": "San Francisco, CA (Hybrid Remote Available)",
+      "accommodationKnowledge": 78,
+      "diversityCommitment": "high",
+      "openPositions": [
+        {
+          "id": "job-001",
+          "title": "Junior Customer Support Specialist (Remote)",
+          "type": "remote/hybrid",
+          "experienceLevel": "entry-level",
+          "description": "Entry-level customer support role for individuals with disabilities. Full accommodation package provided.",
+          "skillsRequired": ["Communication", "Problem Solving", "Empathy"],
+          "salaryRange": "$45,000 - $55,000/year",
+          "workArrangement": "fully remote with occasional team calls",
+          "accessibilityRequirements": ["WCAG 2.1 AA compliant workspace", "accessible communication tools"]
+        }
+      ]
+    },
+    {
+      "id": "e-002",
+      "email": "hr@dataentry.example.com",
+      "password": "hashed:demo123",
+      "companyName": "DataFlow Analytics",
+      "role": "employer",
+      "status": "active",
+      "industry": "Data & Analytics",
+      "employeeCount": 80,
+      "location": "Austin, TX (Remote Available)",
+      "accommodationKnowledge": 65,
+      "diversityCommitment": "medium",
+      "openPositions": [
+        {
+          "id": "job-002",
+          "title": "Data Entry Clerk - Accessible Role",
+          "type": "remote",
+          "experienceLevel": "entry-level",
+          "description": "Data entry position designed for candidates with visual impairments. Screen reader compatible workflow.",
+          "skillsRequired": ["Attention to Detail", "Data Accuracy", "Keyboard Skills"],
+          "salaryRange": "$40,000 - $50,000/year",
+          "workArrangement": "fully remote",
+          "accessibilityRequirements": ["Screen reader support (NVDA/JAWS)", "magnification software", "accessible UI tools"]
+        }
+      ]
+    }
+  ],
+  "providers": [
+    {
+      "id": "prov-001",
+      "email": "support@vocational.example.com",
+      "password": "hashed:demo123",
+      "name": "Alex Rivera - Vocational Rehabilitation Counselor",
+      "role": "provider",
+      "status": "active",
+      "specialization": "Employment Readiness & Job Matching",
+      "clientsServed": 45,
+      "experienceYears": 12,
+      "location": "Remote",
+      "certifications": ["Vocational Rehabilitation Counselor", "Disability Employment Specialist"],
+      "currentCaseload": 23,
+      "assignedParticipants": ["p-001"]
+    },
+    {
+      "id": "prov-002",
+      "email": "therapy@rehab.example.com",
+      "password": "hashed:demo123",
+      "name": "Dr. Emily Chen - Occupational Therapist",
+      "role": "provider",
+      "status": "active",
+      "specialization": "Return-to-Work Therapy & Skills Training",
+      "clientsServed": 67,
+      "experienceYears": 15,
+      "location": "Chicago, IL",
+      "certifications": ["Licensed Occupational Therapist", "Neuro-Rehabilitation Specialist"],
+      "currentCaseload": 31,
+      "assignedParticipants": ["p-002"]
+    }
+  ],
+  "admins": [
+    {
+      "id": "admin-001",
+      "email": "admin@tbi-mvp.example.com",
+      "password": "hashed:demo123",
+      "name": "Jennifer Martinez - Platform Administrator",
+      "role": "admin",
+      "status": "active",
+      "department": "Operations"
+    },
+    {
+      "id": "admin-002",
+      "email": "analytics@tbi-mvp.example.com",
+      "password": "hashed:demo123",
+      "name": "David Kim - Data Analyst",
+      "role": "admin",
+      "status": "active",
+      "department": "Analytics"
+    }
+  ]
+}

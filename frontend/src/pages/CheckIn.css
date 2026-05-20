@@ -1,0 +1,307 @@
+/**
+ * Screen 3: Check-In (Micro Interaction)
+ * Mobile-First, Touch-Optimized Design
+ */
+
+/* Container - Full Screen */
+.checkin-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+/* Header */
+.checkin-header {
+  text-align: center;
+  color: white;
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInDown 0.5s ease-out;
+}
+
+.header-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.checkin-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.checkin-header p {
+  font-size: 1.125rem;
+  opacity: 0.95;
+  margin-top: var(--spacing-sm);
+}
+
+/* Feeling Selection */
+.feeling-selection {
+  background: rgba(255, 255, 255, 0.95);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.feeling-selection h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 0 0 var(--spacing-lg) 0;
+  color: #212529;
+}
+
+.feeling-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.feeling-button {
+  position: relative;
+  padding: var(--spacing-lg);
+  border: 3px solid #e9ecef;
+  background: white;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.feeling-button:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(13, 110, 253, 0.2);
+}
+
+.feeling-button.selected {
+  border-color: var(--color-success);
+  background: linear-gradient(135deg, #e7f3ff 0%, #d6eaf8 100%);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.feeling-button.selected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 4px;
+  background: var(--color-success);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.feeling-icon {
+  font-size: 3rem;
+}
+
+.feeling-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.feeling-status {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-success);
+  margin-top: var(--spacing-sm);
+}
+
+/* Detailed Questions */
+.detailed-questions {
+  background: #fff3cd;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  width: 100%;
+  max-width: 420px;
+  margin-top: var(--spacing-md);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.detailed-questions h3 {
+  font-size: 1rem;
+  margin: 0 0 var(--spacing-md) 0;
+  color: #856404;
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 1rem;
+  color: #212529;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+  background: rgba(13, 110, 253, 0.1);
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* Footer */
+.checkin-footer {
+  margin-top: auto;
+  width: 100%;
+  max-width: 420px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: var(--spacing-lg);
+  background: var(--color-success);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #157347;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.4);
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: white;
+  border: 2px solid #dee2e6;
+  border-radius: var(--radius-md);
+  color: #495057;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Help Message */
+.help-message {
+  background: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.help-message p {
+  font-size: 0.875rem;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: #495057;
+  font-weight: 600;
+}
+
+.help-message ul {
+  margin: 0;
+  padding-left: var(--spacing-md);
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Info Note */
+.checkin-info {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  margin-top: auto;
+  padding-top: var(--spacing-lg);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .feeling-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .feeling-button {
+    min-width: calc(33.33% - var(--spacing-sm)/2);
+    max-width: calc(33.33% - var(--spacing-sm)/2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .checkin-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .feeling-button.selected {
+    border-width: 4px;
+  }
+
+  .checkbox-item:hover {
+    background-color: rgba(13, 110, 253, 0.2);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .feeling-button,
+  .btn-submit:hover {
+    transition: none;
+    transform: none !important;
+  }
+}

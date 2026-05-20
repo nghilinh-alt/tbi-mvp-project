@@ -1,0 +1,97 @@
+/**
+ * Admin Portal - Global Styles & Theme
+ * WCAG 2.1 AA Compliant Admin Dashboard Theme
+ */
+
+/* ===== CSS Custom Properties ===== */
+:root {
+  --admin-bg: #f8fafc;
+  --admin-footer-bg: #1e293b;
+  --admin-footer-text: #94a3b8;
+  --primary-color: #0d9488;
+  --secondary-color: #64748b;
+  --text-color: #334155;
+  --border-color: #e2e8f0;
+  --focus-outline: #0d9488;
+  
+  /* Status colors */
+  --status-active-bg: #dcfce7;
+  --status-active-text: #166534;
+  --status-suspended-bg: #fee2e2;
+  --status-suspended-text: #991b1b;
+  
+  /* Font families */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===== Base Reset ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--admin-bg);
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* ===== Focus Indicators ===== */
+*:focus-visible {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* ===== Forms ===== */
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--primary-color);
+}
+
+a:hover, a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ===== Utilities ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

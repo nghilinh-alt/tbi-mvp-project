@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TBI-MVP Admin Portal</title>
+  <!-- CACHE BUSTER -->
+  <style>
+    body { font-family: system-ui, sans-serif; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); min-height: 100vh; margin: 0; padding: 2rem; display: flex; align-items: center; justify-content: center; color: white; }
+    .admin-panel { max-width: 900px; background: #1e293b; border-radius: 16px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.5); border: 1px solid #334155; }
+    h1 { color: #94a3b8; margin-bottom: 0.75rem; font-size: 2rem; }
+    p { color: #64748b; line-height: 1.6; max-width: 700px; }
+    .status-badge { display: inline-block; background: #059669; color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.875rem; font-weight: bold; margin: 1.5rem 0; }
+    .section { background: #0f172a; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; border: 1px solid #334155; }
+    a { color: #60a5fa !important; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button { background: #3b82f6 !important; color: white !important; border: none !important; padding: 0.75rem 1.5rem !important; border-radius: 8px !important; cursor: pointer !important; font-size: 1rem; margin-right: 0.5rem; margin-top: 1rem; transition: all 0.2s; }
+    button:hover { background: #2563eb !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); }
+    button:focus { outline: 3px solid #fbbf24; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <div class="admin-panel">
+    <h1>🔐 TBI-MVP Admin Portal</h1>
+    
+    <div class="status-badge">✅ Admin System Ready</div>
+
+    <p style="max-width: 800px;">Welcome to the administration panel for the TBI Employment Pathways MVP platform. This demo admin portal shows system status and available actions.</p>
+
+    <div class="section">
+      <h2>📊 System Status</h2>
+      <p>All systems operational. The admin portal is configured for user management, journey data monitoring, and analytics dashboards.</p>
+    </div>
+
+    <div class="section">
+      <h2>🔧 Available Endpoints</h2>
+      <ul style="color: #94a3b8; padding-left: 1.5rem;">
+        <li>User management and authentication</li>
+        <li>Journey data monitoring</li>
+        <li>System health checks</li>
+        <li>Admin analytics dashboard</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📡 Connected Services</h2>
+      <p><strong>Frontend Portal:</strong> <a href="http://localhost:5173" onclick="event.preventDefault(); window.location.href='http://localhost:5173'">http://localhost:5173</a></p>
+      <p><strong>API Documentation:</strong> <a href="http://localhost:8000/docs" target="_blank" rel="noopener">http://localhost:8000/docs</a></p>
+    </div>
+
+    <div class="section">
+      <h2>🚀 Quick Actions</h2>
+      <button onclick="showStats()">📊 View System Statistics</button>
+      <button onclick="showUsers()">👥 Manage Users</button>
+      <button onclick="showJourneys()">🗺️ View Journeys</button>
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 0.875rem; color: #475569;"><em>Demo admin panel for TBI-MVP project administration.</em></p>
+  </div>
+
+  <script>
+    console.log('🔐 Admin portal loaded successfully!');
+
+    function showStats() {
+      alert('📊 System Statistics:\n\n├─ Total Users: 0 (Demo)\n├─ Active Journeys: 0\n├─ Skills Assessed: 0\n└─ Jobs Available: 0');
+    }
+
+    function showUsers() {
+      alert('👥 User Management:\n\nUser list is empty in demo mode.\nThis would display all registered users with edit capabilities.');
+    }
+
+    function showJourneys() {
+      alert('🗺️ Journey Monitoring:\n\nCurrent journeys list is empty.\nThis would show active employment journey progress.');
+    }
+
+    console.log('✅ Quick action buttons: View Statistics, Manage Users, View Journeys');
+  </script>
+</body>
+</html>
