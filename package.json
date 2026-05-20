@@ -1,0 +1,26 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "./build.sh && cp -r dist/* ../dist-prod/",
+    "optimize": "rm -rf node_modules/@esbuild/win32-x64"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

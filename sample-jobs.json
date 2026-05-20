@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Senior React Developer",
+    "company": "TechCorp Inc.",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "$120k-$160k",
+    "description": "We're looking for an experienced React developer to lead our frontend team. You'll be working with modern React, TypeScript, and Tailwind CSS.",
+    "requirements": ["5+ years React experience", "TypeScript mastery", "State management expertise"],
+    "posted": "2 days ago",
+    "url": "https://example.com/jobs/react-senior"
+  },
+  {
+    "id": "2",
+    "title": "Frontend Engineer",
+    "company": "StartupXYZ",
+    "location": "San Francisco, CA",
+    "type": "Full-time",
+    "salary": "$100k-$140k",
+    "description": "Join our growing frontend team building beautiful user interfaces with React and modern CSS frameworks.",
+    "requirements": ["3+ years React", "CSS/Tailwind expertise", "Git workflow"],
+    "posted": "5 days ago",
+    "url": "https://example.com/jobs/frontend"
+  },
+  {
+    "id": "3",
+    "title": "UI/UX Engineer",
+    "company": "DesignCo",
+    "location": "Remote",
+    "type": "Contract",
+    "salary": "$80-$120/hr",
+    "description": "Seeking a designer who codes to create beautiful, accessible interfaces.",
+    "requirements": ["Design systems experience", "React basics", "Figma proficiency"],
+    "posted": "1 week ago",
+    "url": "https://example.com/jobs/ux-ui"
+  },
+  {
+    "id": "4",
+    "title": "Web Developer",
+    "company": "E-commerce Plus",
+    "location": "New York, NY",
+    "type": "Part-time",
+    "salary": "$60k-$80k",
+    "description": "Help us build and maintain our e-commerce platform using modern web technologies.",
+    "requirements": ["JavaScript/React", "Responsive design", "Basic CSS"],
+    "posted": "1 week ago",
+    "url": "https://example.com/jobs/web-dev"
+  },
+  {
+    "id": "5",
+    "title": "Full Stack Developer",
+    "company": "Innovation Labs",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "$130k-$170k",
+    "description": "Build full-stack solutions with React frontend and Node.js backend.",
+    "requirements": ["React/Next.js", "Node.js/Express", "Database experience"],
+    "posted": "2 weeks ago",
+    "url": "https://example.com/jobs/fullstack"
+  }
+]

@@ -1,0 +1,27 @@
+# Netlify configuration for photophobia-friendly portfolio
+# Allowing inline scripts, React, Tailwind from CDN
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Allow inline scripts (React + Tailwind in demo.html)
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; frame-ancestors 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;"
+    
+    # Allow cross-origin iframe for Tailwind/React from CDN
+    X-Frame-Options = "SAMEORIGIN"
+    
+    # XSS protection
+    X-XSS-Protection = "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    X-Content-Type-Options = "nosniff"
+
+# Static site configuration
+[build]
+  publish = "."
+
+# Redirect all routes to index.html for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

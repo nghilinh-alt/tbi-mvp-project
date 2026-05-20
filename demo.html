@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nghil's Portfolio</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Sample job data for demo
+        const jobsData = {
+            frontend: {
+                junior: [
+                    { id: 'f-j1', role: 'Junior Frontend Dev', company: 'TechStart', salary: '$50k-$70k' },
+                    { id: 'f-j2', role: 'Frontend Developer I', company: 'WebCo', salary: '$55k-$65k' },
+                    { id: 'f-j3', role: 'UI Developer', company: 'DesignFirm', salary: '$52k-$72k' }
+                ],
+                mid: [
+                    { id: 'f-m1', role: 'Frontend Developer II', company: 'WebCorp', salary: '$70k-$90k' },
+                    { id: 'f-m2', role: 'React Developer', company: 'AppCo', salary: '$75k-$85k' },
+                    { id: 'f-m3', role: 'Frontend Engineer', company: 'TechInc', salary: '$68k-$88k' }
+                ],
+                senior: [
+                    { id: 'f-s1', role: 'Senior Frontend Dev', company: 'BigCorp', salary: '$95k-$120k' },
+                    { id: 'f-s2', role: 'Lead React Engineer', company: 'TechGiant', salary: '$100k-$130k' },
+                    { id: 'f-s3', role: 'Frontend Architect', company: 'InnovateCo', salary: '$110k-$140k' }
+                ]
+            },
+            backend: {
+                junior: [
+                    { id: 'b-j1', role: 'Junior Backend Dev', company: 'ServerStart', salary: '$52k-$72k' },
+                    { id: 'b-j2', role: 'Backend Developer I', company: 'APICo', salary: '$58k-$68k' }
+                ],
+                mid: [
+                    { id: 'b-m1', role: 'Backend Developer II', company: 'ServerCorp', salary: '$72k-$92k' },
+                    { id: 'b-m2', role: 'Node.js Engineer', company: 'APIInc', salary: '$78k-$88k' }
+                ],
+                senior: [
+                    { id: 'b-s1', role: 'Senior Backend Dev', company: 'ServerGiant', salary: '$98k-$125k' },
+                    { id: 'b-s2', role: 'Backend Architect', company: 'DataCorp', salary: '$105k-$135k' }
+                ]
+            },
+            dataScience: {
+                junior: [
+                    { id: 'd-j1', role: 'Junior Data Scientist', company: 'AnalyticsStart', salary: '$60k-$80k' },
+                    { id: 'd-j2', role: 'Data Analyst', company: 'InsightCo', salary: '$58k-$75k' }
+                ],
+                mid: [
+                    { id: 'd-m1', role: 'Data Scientist II', company: 'AnalyticsCorp', salary: '$80k-$100k' },
+                    { id: 'd-m2', role: 'ML Engineer', company: 'DataInc', salary: '$85k-$105k' }
+                ],
+                senior: [
+                    { id: 'd-s1', role: 'Senior Data Scientist', company: 'BigAnalytics', salary: '$110k-$140k' },
+                    { id: 'd-s2', role: 'ML Lead Engineer', company: 'AI Corp', salary: '$115k-$150k' }
+                ]
+            },
+            fullstack: {
+                junior: [
+                    { id: 'fs-j1', role: 'Junior Full Stack Dev', company: 'FullStart', salary: '$55k-$75k' }
+                ],
+                mid: [
+                    { id: 'fs-m1', role: 'Full Stack Developer II', company: 'FullCorp', salary: '$75k-$95k' },
+                    { id: 'fs-m2', role: 'MERN Stack Dev', company: 'WebStackInc', salary: '$80k-$98k' }
+                ],
+                senior: [
+                    { id: 'fs-s1', role: 'Senior Full Stack Dev', company: 'FullGiant', salary: '$100k-$130k' },
+                    { id: 'fs-s2', role: 'CTO (Tech Lead)', company: 'ScaleUp Co', salary: '$120k-$160k' }
+                ]
+            }
+        };
+
+        function App() {
+            const [activeSection, setActiveSection] = useState('projects');
+
+            return (
+                <div className="min-h-screen">
+                    {/* Header */}
+                    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-slate-900/70 border-b border-slate-700 shadow-lg">
+                        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                                    <span className="text-white font-bold text-xl">🎨</span>
+                                </div>
+                                <div>
+                                    <h1 className="text-xl font-bold text-white">Portfolio</h1>
+                                    <p className="text-xs text-gray-400">Photophobia-friendly Design</p>
+                                </div>
+                            </div>
+
+                            <div className="hidden md:flex items-center gap-1">
+                                {['projects', 'jobs', 'dashboard'].map(item => (
+                                    <button
+                                        key={item}
+                                        onClick={() => setActiveSection(item)}
+                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                                            activeSection === item
+                                                ? 'bg-indigo-500/20 text-indigo-300'
+                                                : 'text-gray-300 hover:text-white hover:bg-slate-800'
+                                        }`}
+                                    >
+                                        {item.charAt(0).toUpperCase() + item.slice(1)}
+                                    </button>
+                                ))}
+                            </div>
+                        </nav>
+                    </header>
+
+                    {/* Main Content */}
+                    <main className="pt-24 pb-16 px-4">
+                        {activeSection === 'projects' && (
+                            <div className="max-w-7xl mx-auto">
+                                <Projects />
+                            </div>
+                        )}
+
+                        {activeSection === 'jobs' && (
+                            <div className="max-w-7xl mx-auto">
+                                <JobsDatabase jobsData={jobsData} />
+                            </div>
+                        )}
+                    </main>
+                </div>
+            );
+        }
+
+        function Projects() {
+            const projects = [
+                { name: 'E-commerce Platform', desc: 'Full-stack shopping experience with React/Node', tech: 'React, Node.js' },
+                { name: 'Portfolio Site', desc: 'Personal portfolio with filtering job board', tech: 'React, Tailwind' }
+            ];
+
+            return (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto py-8">
+                    {projects.map((p, i) => (
+                        <div key={i} className="bg-slate-800/50 rounded-lg p-6 hover:bg-slate-800 transition-colors border border-slate-700">
+                            <h3 className="text-xl font-bold mb-2">{p.name}</h3>
+                            <p className="text-gray-400 mb-3">{p.desc}</p>
+                            <span className="text-sm text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">{p.tech}</span>
+                        </div>
+                    ))}
+                </div>
+            );
+        }
+
+        function JobsDatabase({ jobsData }) {
+            const [position, setPosition] = useState('frontend');
+            const [level, setLevel] = useState('junior');
+
+            return (
+                <div className="max-w-7xl mx-auto py-4">
+                    {/* Filters */}
+                    <div className="flex flex-wrap gap-4 mb-6 justify-between items-center">
+                        <div className="flex gap-2">
+                            {['frontend', 'backend', 'dataScience', 'fullstack'].map(pos => (
+                                <button
+                                    key={pos}
+                                    onClick={() => setPosition(pos)}
+                                    className={`px-4 py-2 rounded-lg text-sm capitalize ${
+                                        position === pos
+                                            ? 'bg-indigo-500/20 text-indigo-300'
+                                            : 'text-gray-300 hover:bg-slate-800'
+                                    }`}
+                                >
+                                    {pos.replace(/([A-Z])/g, ' $1').trim()}
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="flex gap-2">
+                            {['junior', 'mid', 'senior'].map(lvl => (
+                                <button
+                                    key={lvl}
+                                    onClick={() => setLevel(lvl)}
+                                    className={`px-4 py-2 rounded-lg text-sm capitalize ${
+                                        level === lvl
+                                            ? 'bg-indigo-500/20 text-indigo-300'
+                                            : 'text-gray-300 hover:bg-slate-800'
+                                    }`}
+                                >
+                                    {lvl}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Job Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {(jobsData[position] || []).map(job => (
+                            <div key={job.id} className="bg-slate-800/50 rounded-lg p-5 hover:bg-slate-800 transition-colors border border-slate-700">
+                                <h3 className="font-bold text-lg mb-1">{job.role}</h3>
+                                <p className="text-indigo-400 mb-2">{job.company}</p>
+                                <span className="text-sm text-gray-400 bg-slate-700/50 px-2 py-1 rounded inline-block">
+                                    {job.salary}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Summary */}
+                    <div className="mt-6 p-4 bg-indigo-900/20 rounded-lg border border-indigo-500/30">
+                        <p className="text-sm text-gray-300">
+                            Found {(jobsData[position] || []).length} <strong>{level}</strong> {position} positions available.
+                        </p>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
