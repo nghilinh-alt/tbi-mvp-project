@@ -1,0 +1,289 @@
+/**
+ * Screen 4: Progress & Confidence Dashboard
+ * Mobile-First, Encouraging Design
+ */
+
+/* Container */
+.progress-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f5f7fa 0%, #e9ecef 100%);
+  padding: var(--spacing-md);
+}
+
+/* Header */
+.progress-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.progress-header h1 {
+  font-size: 2rem;
+  color: #212529;
+  margin: 0;
+}
+
+.progress-header p {
+  color: #6c757d;
+  margin-top: var(--spacing-sm);
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:first-child {
+  border-left: 4px solid var(--color-primary);
+}
+
+.stat-card:nth-child(2) {
+  border-left: 4px solid var(--color-info);
+}
+
+.stat-card:nth-child(3) {
+  border-left: 4px solid var(--color-success);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.stat-value {
+  flex: 1;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #212529;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Achievement Message */
+.achievement-message {
+  background: linear-gradient(135deg, #d1e7dd 0%, #a3cfbb 100%);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.achievement-message h3 {
+  font-size: 1.25rem;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: #155724;
+}
+
+.achievement-message p {
+  font-size: 1rem;
+  margin: 0;
+  color: #0f5132;
+  font-style: italic;
+}
+
+/* Weekly Breakdown */
+.weekly-breakdown {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weekly-breakdown h2 {
+  font-size: 1rem;
+  margin: 0 0 var(--spacing-md) 0;
+  color: #495057;
+}
+
+.chart-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: var(--spacing-lg) 0;
+  height: 200px;
+}
+
+.day-chart-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  width: 12%;
+}
+
+.day-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: var(--spacing-sm);
+}
+
+.day-bar {
+  width: 100%;
+  min-height: 2px;
+  border-radius: 4px;
+  transition: height 0.5s ease;
+  background: var(--color-primary);
+}
+
+.day-stats {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+/* Chart Legend */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.legend-color.good {
+  background: var(--color-success);
+}
+
+.legend-color.okay {
+  background: var(--color-warning);
+}
+
+.legend-color.struggling {
+  background: var(--color-danger);
+}
+
+/* Motivational Quote */
+.motivational-quote {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #e7f3ff 0%, #d6eaf8 100%);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.motivational-quote {
+  font-style: italic;
+  color: #004085;
+  font-size: 1.125rem;
+}
+
+/* Confidence Meter */
+.confidence-meter {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #fff3cd 0%, #ffecb5 100%);
+  border-radius: var(--radius-md);
+}
+
+.confidence-meter h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  color: #856404;
+  font-size: 1rem;
+}
+
+.meter-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.meter-bar {
+  flex: 1;
+  height: 32px;
+  background: #e9ecef;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffc107, #ff9800);
+  border-radius: 16px;
+  transition: width 0.5s ease;
+}
+
+.meter-value {
+  font-weight: 700;
+  color: #856404;
+  min-width: 48px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .summary-cards {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .stat-card {
+    min-width: calc(33.33% - var(--spacing-md)/2);
+    max-width: calc(33.33% - var(--spacing-md)/2);
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .progress-container {
+    padding: var(--spacing-xl);
+  }
+
+  .summary-cards {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .stat-card {
+    border-width: 3px;
+  }
+
+  .legend-item {
+    font-weight: 700;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .day-bar {
+    transition: none;
+  }
+
+  .meter-fill {
+    transition: none;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TBI Employment Pathways MVP - Ready!</title>
+  <!-- FORCE CACHE CLEAR: v3 -->
+  <style>body { font-family: system-ui, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; margin: 0; padding: 2rem; display: flex; align-items: center; justify-content: center; } .app { max-width: 800px; background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transition: all 0.3s ease; } h1 { color: #4c51bf; margin-bottom: 0.5rem; font-size: 2rem; animation: slideInLeft 0.3s ease; } p { color: #718096; line-height: 1.6; max-width: 650px; text-align: center; } .demo-box { border: 2px dashed #e2e8f0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; background: #f7fafc; font-size: 0.95rem; animation: slideInUp 0.3s ease 0.1s both; } button { background: #4c51bf !important; color: white !important; border: none !important; padding: 1rem 2rem !important; border-radius: 8px !important; font-size: 1rem !important; cursor: pointer !important; margin-right: 0.5rem !important; margin-top: 1rem !important; transition: all 0.2s !important; animation: slideInUp 0.3s ease 0.2s both; } button:hover { background: #434190 !important; transform: translateY(-2px) !important; box-shadow: 0 4px 12px rgba(76, 81, 191, 0.3) !important; } .dashboard-view { display: none; animation: fadeIn 0.5s ease; } @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } } @keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }</style>
+</head>
+<body>
+  <div class="app">
+    <div id="view-landing" class="app">
+      <h1>🎉 TBI Employment Pathways MVP - Ready!</h1>
+      <p>Welcome to your employment journey portal. This demo demonstrates the application architecture.</p>
+      <div class="demo-box"><strong>Demo Credentials:</strong><br/>Email: sarah.johnson@participant.example.com<br/>Password: hashed:demo123</div>
+      <button id="btn-dashboard">Continue to Dashboard</button>
+      <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e2e8f0;">
+      <h3>Project URLs:</h3>
+      <p><a href="#" onclick="openAdmin(); return false;">🔐 Admin Portal (Port 5174)</a></p>
+      <p><a href="http://localhost:8000/docs" target="_blank" rel="noopener">📚 API Documentation</a></p>
+    </div>
+
+    <div id="view-dashboard" class="app dashboard-view">
+      <h1>📊 Your Employment Dashboard</h1>
+      <p style="margin-bottom: 2rem;">Welcome! This dashboard shows your progress through the employment journey.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="padding: 1.5rem; background: #f0f9ff; border-radius: 8px; border: 1px solid #bae6fd;"><h3>👤 Profile</h3><p style="color: #64748b;">View and edit your personal information</p></div>
+        <div style="padding: 1.5rem; background: #f0fdf4; border-radius: 8px; border: 1px solid #bbf7d0;"><h3>📊 Progress</h3><p style="color: #64748b;">Track your journey milestones and achievements</p></div>
+        <div style="padding: 1.5rem; background: #fffbeb; border-radius: 8px; border: 1px solid #fef3c7;"><h3>💡 Skills</h3><p style="color: #64748b;">Assess and develop your skills</p></div>
+        <div style="padding: 1.5rem; background: #f5f3ff; border-radius: 8px; border: 1px solid #ddd6fe;"><h3>💼 Jobs</h3><p style="color: #64748b;">Browse accessible job opportunities</p></div>
+      </div>
+      <button id="btn-landing" style="background: #64748b !important;">← Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    console.log('🎉 TBI-MVP Demo application loaded successfully!');
+
+    const btnDashboard = document.getElementById('btn-dashboard');
+    const btnLanding = document.getElementById('btn-landing');
+
+    // Hide all alerts, show transitions instead
+    btnDashboard.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('👉 User clicked Continue to Dashboard');
+      
+      document.getElementById('view-landing').style.display = 'none';
+      document.getElementById('view-dashboard').style.display = 'block';
+      window.scrollTo(0, 0);
+      
+      // Log successful action
+      console.log('✅ Dashboard view shown - Navigation successful!');
+    });
+
+    btnLanding.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('👉 User clicked Back to Home');
+      
+      document.getElementById('view-dashboard').style.display = 'none';
+      document.getElementById('view-landing').style.display = 'block';
+      window.scrollTo(0, 0);
+      
+      console.log('✅ Landing view shown - Navigation successful!');
+    });
+
+    // Open admin portal in new tab
+    function openAdmin() {
+      console.log('👉 User clicked Admin Portal link');
+      window.open('http://localhost:5174', '_blank');
+    }
+
+    console.log('✅ All event handlers attached - Ready for user interaction!');
+  </script>
+</body>
+</html>

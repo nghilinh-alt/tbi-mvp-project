@@ -1,0 +1,67 @@
+# ============================================
+# TBI-MVP Docker Compose Setup
+# Deploy with: docker-compose up -d --build
+# ============================================
+
+version: '3.8'
+
+services:
+  # Backend API Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./app.db
+      - SECRET_KEY=change-this-in-production-using-openssl
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Participant Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # Admin Portal Frontend Service
+  admin-portal:
+    build:
+      context: ./frontend-admin
+      dockerfile: Dockerfile.admin
+    ports:
+      - "5174:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # PostgreSQL Database (Production only)
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: tbi_mvp
+      POSTGRES_USER: tbi_user
+      POSTGRES_PASSWORD: change-me-in-production
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tbi_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres-data:
